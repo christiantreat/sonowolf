@@ -407,6 +407,9 @@
             <!-- Reproductive Category -->
             <div class="category-card" data-category="reproductive">
                 <h2 class="category-title">Reproductive <span class="video-count">2</span></h2>
+
+                <h3 class="category-subheader">Clinical Applications</h3>
+                <a href="#" class="video-link" onclick="showGetTwoViewsCase(event)">Get Two Views</a>
                 
                 <h3 class="category-subheader">Videos</h3>
                 <a href="https://coreultrasound.com/ob-gyn-scanning-technique-5ms/" class="video-link" target="_blank">Basic Ob-Gyn Scanning Technique</a>
@@ -814,6 +817,97 @@
             newWindow.document.close();
         }
 
+        // Get Two Views case function - opens in new tab
+function showGetTwoViewsCase(e) {
+    e.preventDefault();
+    const caseHTML = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Get Two Views - Teaching Case</title>
+            <style>
+                body { 
+                    font-family: 'Courier New', monospace; 
+                    background: #BEBEBE; 
+                    margin: 20px; 
+                    color: #000000;
+                }
+                .container {
+                    background: #BEBEBE; 
+                    border: 4px solid #000000; 
+                    border-style: outset; 
+                    padding: 20px; 
+                    max-width: 1200px; 
+                    margin: 0 auto;
+                }
+                h2 { 
+                    color: #990000; 
+                    text-align: center; 
+                    margin-bottom: 20px; 
+                    text-transform: uppercase; 
+                }
+                .grid { 
+                    display: grid; 
+                    grid-template-columns: 1fr 1fr; 
+                    gap: 20px; 
+                }
+                .view { 
+                    background: #828282; 
+                    border: 2px solid #000000; 
+                    border-style: inset; 
+                    padding: 15px; 
+                    text-align: center;
+                }
+                h3 { 
+                    color: #990000; 
+                    margin-bottom: 10px; 
+                    text-transform: uppercase;
+                }
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    border: 2px solid #000000;
+                }
+                @media (max-width: 768px) {
+                    .grid { grid-template-columns: 1fr; }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h2>Get Two Views - Teaching Case</h2>
+                
+                <div class="grid">
+                    <div class="view">
+                        <h3>Transabdominal Longitudinal View</h3>
+                        <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/d2a6094b-1b67-4f95-9e8c-592994888e08/IUP.Heterotopic.ezgif.gif?format=2500w" alt="Transabdominal Longitudinal View">
+                    </div>
+                    
+                    <div class="view">
+                        <h3>Transverse View</h3>
+                        <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/c4546ac7-8369-4e71-ad14-d0341f9fc5f0/R.sided.heterotopic.ezgif.gif?format=2500w" alt="Transverse View">
+                    </div>
+                    
+                    <div class="view">
+                        <h3>Right Adnexa</h3>
+                        <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/7eddf449-edcb-4b27-881b-46dce9c4e96a/R.yolk%3F%3F%3F.ezgif.gif?format=2500w" alt="Right Adnexa">
+                    </div>
+                    
+                    <div class="view">
+                        <h3>Right Upper Quadrant</h3>
+                        <img src="https://images.squarespace-cdn.com/content/v1/5c69e7d7b91449698da66e65/dd4e01d5-d3ae-43d6-91d1-2f2d8b3ff69c/hemoperitoneum.ezgif.gif?format=2500w" alt="Right Upper Quadrant">
+                    </div>
+                </div>
+            </div>
+        </body>
+        </html>
+    `;
+    
+    const newWindow = window.open('', '_blank');
+    newWindow.document.write(caseHTML);
+    newWindow.document.close();
+}
+        
         // Event listeners
         document.addEventListener('DOMContentLoaded', function() {
             searchBox.addEventListener('input', performSearch);
