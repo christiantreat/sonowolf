@@ -405,9 +405,11 @@
             </div>
 
             <!-- Reproductive Category -->
-            <!-- Reproductive Category -->
 <div class="category-card" data-category="reproductive">
-    <h2 class="category-title">Reproductive <span class="video-count">3</span></h2>
+    <h2 class="category-title">OB/GYN <span class="video-count">3</span></h2>
+
+     <h3 class="category-subheader">Anatomy</h3>
+         <a href="#" class="video-link" onclick="showReproductiveAnatomy(event)">Transabdominal View</a>
     
     <h3 class="category-subheader">Scanning Protocols</h3>
     <a href="#" class="video-link" onclick="showFirstTrimesterTable(event)">First Trimester Pregnancy Protocol</a>
@@ -616,6 +618,165 @@
             newWindow.document.write(tableHTML);
             newWindow.document.close();
         }
+
+// Reproductive anatomy function - opens in new tab
+function showReproductiveAnatomy(e) {
+    e.preventDefault();
+    const anatomyHTML = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Reproductive Anatomy - Labeled Ultrasound Images</title>
+            <style>
+                body { 
+                    font-family: 'Courier New', monospace; 
+                    background: #BEBEBE; 
+                    margin: 20px; 
+                    color: #000000;
+                }
+                .container {
+                    background: #BEBEBE; 
+                    border: 4px solid #000000; 
+                    border-style: outset; 
+                    padding: 20px; 
+                    max-width: 1400px; 
+                    margin: 0 auto;
+                }
+                h2 { 
+                    color: #990000; 
+                    text-align: center; 
+                    margin-bottom: 20px; 
+                    text-transform: uppercase; 
+                }
+                .images-grid { 
+                    display: grid; 
+                    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+                    gap: 20px; 
+                    margin-bottom: 20px;
+                }
+                .image-container { 
+                    background: #828282; 
+                    border: 2px solid #000000; 
+                    border-style: inset; 
+                    padding: 15px; 
+                    text-align: center;
+                }
+                .image-container img {
+                    max-width: 100%;
+                    height: auto;
+                    border: 2px solid #000000;
+                    margin-bottom: 10px;
+                }
+                .image-title {
+                    color: #990000;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                }
+                .structures-list {
+                    background: #828282; 
+                    border: 2px solid #000000; 
+                    border-style: inset; 
+                    padding: 20px; 
+                    margin-top: 20px;
+                }
+                .structures-title {
+                    color: #990000;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    margin-bottom: 15px;
+                    text-align: center;
+                }
+                .structures-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 10px;
+                    font-size: 12px;
+                }
+                @media (max-width: 768px) {
+                    .images-grid { grid-template-columns: 1fr; }
+                    .structures-grid { grid-template-columns: 1fr; }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h2>Reproductive Anatomy - Labeled Ultrasound Images</h2>
+                
+                <div class="images-grid">
+                    <div class="image-container">
+                        <div class="image-title">Sagittal View 1</div>
+                        <img src="https://prod-images-static.radiopaedia.org/images/65082656/8b9fbd2615992bd5b06b977466c53f07e119ba45ca24f4368f7b3d7953caafc4_gallery.jpeg" alt="Sagittal reproductive anatomy ultrasound">
+                    </div>
+                    
+                    <div class="image-container">
+                        <div class="image-title">Sagittal View 2</div>
+                        <img src="https://prod-images-static.radiopaedia.org/images/65082657/6401207853de49cbe66edae80476b91d7e5237bda4b9d8806d65bfed29924f6f_big_gallery.jpeg" alt="Sagittal reproductive anatomy ultrasound">
+                    </div>
+                    
+                    <div class="image-container">
+                        <div class="image-title">Sagittal View 3</div>
+                        <img src="https://prod-images-static.radiopaedia.org/images/65082658/9246560a1d3ab57bcd999c0dd1d3fd3d8cb5354a8c074c2ad7b575e1321f6f64_big_gallery.jpeg" alt="Sagittal reproductive anatomy ultrasound">
+                    </div>
+                    
+                    <div class="image-container">
+                        <div class="image-title">Transverse View 1</div>
+                        <img src="https://prod-images-static.radiopaedia.org/images/65082659/0c6e33d0212e84fa5ea5c70bccc6b17e92ecda6d40585fff75e62a948a69336c_big_gallery.jpeg" alt="Transverse reproductive anatomy ultrasound">
+                    </div>
+                    
+                    <div class="image-container">
+                        <div class="image-title">Transverse View 2</div>
+                        <img src="https://prod-images-static.radiopaedia.org/images/65082660/6561c3c6014ed72aa933361376dcb86945a07801e659d36192f48022fbc64898_big_gallery.jpeg" alt="Transverse reproductive anatomy ultrasound">
+                    </div>
+                    
+                    <div class="image-container">
+                        <div class="image-title">Ovarian View 1</div>
+                        <img src="https://prod-images-static.radiopaedia.org/images/65082661/5ef03fcd753c3a5d6a37e4a0c9063bca03eb29691f07e70d10eaf8f56abb9d92_big_gallery.jpeg" alt="Ovarian anatomy ultrasound">
+                    </div>
+                    
+                    <div class="image-container">
+                        <div class="image-title">Ovarian View 2</div>
+                        <img src="https://prod-images-static.radiopaedia.org/images/65082662/468ecf9ca9357688598385cc34526989e1c5061902dae9505f5bd4637c745204_big_gallery.jpeg" alt="Ovarian anatomy ultrasound">
+                    </div>
+                </div>
+                
+                <div class="structures-list">
+                    <div class="structures-title">Labeled Anatomical Structures</div>
+                    <div class="structures-grid">
+                        <div>1. Fundus of the uterus</div>
+                        <div>2. Bladder</div>
+                        <div>3. Vagina</div>
+                        <div>4. External os of the cervix</div>
+                        <div>5. Pouch of Douglas</div>
+                        <div>6. Endometrium</div>
+                        <div>7. Posterior body of the uterus</div>
+                        <div>8. Anterior body of the uterus</div>
+                        <div>9. Cervical canal</div>
+                        <div>10. Endometrium</div>
+                        <div>11. Internal os of the cervix</div>
+                        <div>12. External os of the cervix</div>
+                        <div>13. Internal os of the cervix</div>
+                        <div>14. Vagina</div>
+                        <div>15. Gas in the rectum</div>
+                        <div>16. Bladder</div>
+                        <div>17. Vaginal</div>
+                        <div>18. Rectum</div>
+                        <div>19. Rectus abdominis muscle</div>
+                        <div>20. Gas in bowel</div>
+                        <div>21. Ovary</div>
+                        <div>22. Ovarian follicle</div>
+                    </div>
+                </div>
+            </div>
+        </body>
+        </html>
+    `;
+    
+    const newWindow = window.open('', '_blank');
+    newWindow.document.write(anatomyHTML);
+    newWindow.document.close();
+}
+        
 // First Trimester table function - opens in new tab
 function showFirstTrimesterTable(e) {
     e.preventDefault();
