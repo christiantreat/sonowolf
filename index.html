@@ -405,16 +405,17 @@
             </div>
 
             <!-- Reproductive Category -->
-            <div class="category-card" data-category="reproductive">
-                <h2 class="category-title">Reproductive <span class="video-count">2</span></h2>
-
-                <h3 class="category-subheader">Clinical Applications</h3>
-                <a href="#" class="video-link" onclick="showGetTwoViewsCase(event)">Get Two Views</a>
-                
-                <h3 class="category-subheader">Videos</h3>
-                <a href="https://coreultrasound.com/ob-gyn-scanning-technique-5ms/" class="video-link" target="_blank">Basic Ob-Gyn Scanning Technique</a>
-                <a href="https://coreultrasound.com/ntrauterine-pregnancy-assessment-5ms/" class="video-link" target="_blank">Intrauterine Pregnancy Identification</a>
-            </div>
+            <!-- Reproductive Category -->
+<div class="category-card" data-category="reproductive">
+    <h2 class="category-title">Reproductive <span class="video-count">3</span></h2>
+    
+    <h3 class="category-subheader">Scanning Protocols</h3>
+    <a href="#" class="video-link" onclick="showFirstTrimesterTable(event)">First Trimester Pregnancy Protocol</a>
+    
+    <h3 class="category-subheader">Videos</h3>
+    <a href="https://coreultrasound.com/ob-gyn-scanning-technique-5ms/" class="video-link" target="_blank">Basic Ob-Gyn Scanning Technique</a>
+    <a href="https://coreultrasound.com/ntrauterine-pregnancy-assessment-5ms/" class="video-link" target="_blank">Intrauterine Pregnancy Identification</a>
+</div>
 
             <!-- Venous Thromboembolism Category -->
             <div class="category-card" data-category="vte">
@@ -612,7 +613,501 @@
             newWindow.document.write(tableHTML);
             newWindow.document.close();
         }
+// First Trimester table function - opens in new tab
+function showFirstTrimesterTable(e) {
+    e.preventDefault();
+    const tableHTML = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>First Trimester Pregnancy Scanning Protocol</title>
+            <style>
+                body { 
+                    font-family: 'Courier New', monospace; 
+                    background: #BEBEBE; 
+                    margin: 20px; 
+                    color: #000000;
+                    line-height: 1.3;
+                }
+                .container {
+                    background: #BEBEBE; 
+                    border: 4px solid #000000; 
+                    border-style: outset; 
+                    padding: 20px; 
+                    max-width: 1400px; 
+                    margin: 0 auto;
+                }
+                h1 { 
+                    color: #990000; 
+                    text-align: center; 
+                    margin-bottom: 20px; 
+                    text-transform: uppercase; 
+                    font-family: 'Impact', 'Arial Black', sans-serif;
+                    text-shadow: 2px 2px 0px #000000;
+                }
+                h2 { 
+                    color: #990000; 
+                    margin: 20px 0 15px 0; 
+                    text-transform: uppercase;
+                    border-bottom: 2px solid #000000;
+                    padding-bottom: 5px;
+                }
+                .step-container {
+                    background: #828282; 
+                    border: 3px solid #000000; 
+                    border-style: inset; 
+                    padding: 15px; 
+                    margin-bottom: 20px;
+                }
+                .step-title {
+                    color: #990000;
+                    font-weight: bold;
+                    font-size: 1.1rem;
+                    margin-bottom: 15px;
+                    text-transform: uppercase;
+                    border-bottom: 1px solid #4B4B4B;
+                    padding-bottom: 5px;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-bottom: 15px;
+                    font-size: 12px;
+                }
+                th {
+                    background: #39BFC9;
+                    color: #000000;
+                    font-weight: bold;
+                    padding: 8px;
+                    border: 2px solid #000000;
+                    text-transform: uppercase;
+                }
+                td {
+                    background: #BEBEBE;
+                    padding: 8px;
+                    border: 1px solid #000000;
+                    vertical-align: top;
+                }
+                .warning-box {
+                    background: #990000;
+                    color: #BEBEBE;
+                    padding: 10px;
+                    border: 2px solid #000000;
+                    margin: 10px 0;
+                    font-weight: bold;
+                }
+                .critical-box {
+                    background: #39BFC9;
+                    color: #000000;
+                    padding: 10px;
+                    border: 2px solid #000000;
+                    margin: 10px 0;
+                    font-weight: bold;
+                }
+                .safety-box {
+                    background: #FFD700;
+                    color: #000000;
+                    padding: 10px;
+                    border: 2px solid #000000;
+                    margin: 10px 0;
+                    font-weight: bold;
+                }
+                @media (max-width: 768px) {
+                    table, th, td {
+                        font-size: 10px;
+                    }
+                    .container {
+                        padding: 10px;
+                        margin: 10px;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>First Trimester Pregnancy Scanning Protocol</h1>
+                <p style="text-align: center; font-weight: bold; margin-bottom: 20px;">(Up to 13 6/7 weeks gestational age)</p>
 
+                <div class="step-container">
+                    <div class="step-title">Step 1: Evaluate Uterus and Cervix for Gestational Sac</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Details</th>
+                                <th>Clinical Significance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Uterine evaluation</strong></td>
+                                <td>Scan entire uterus systematically</td>
+                                <td>Rule out ectopic pregnancy</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gestational sac identification</strong></td>
+                                <td>Look for echogenic rim around fluid collection</td>
+                                <td>Small intrauterine fluid collection >99.5% likely to be intrauterine gestational sac</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Location documentation</strong></td>
+                                <td>Document precise location within uterus</td>
+                                <td>Abnormal locations (cornual, cervical) require referral</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Size assessment</strong></td>
+                                <td>Measure if needed, but CRL is preferred for dating</td>
+                                <td>Mean gestational sac diameter NOT recommended for due date estimation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>If no sac visible</strong></td>
+                                <td>Consider transvaginal approach</td>
+                                <td>May be too early or ectopic pregnancy</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="warning-box">
+                        KEY WARNING: A small intrauterine fluid collection could rarely represent a "pseudo-gestational sac" associated with ectopic pregnancy
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-title">Step 2: Assess Gestational Sac Contents</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>What to Look For</th>
+                                <th>Action Required</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Yolk sac presence</strong></td>
+                                <td>Round structure within gestational sac</td>
+                                <td>Confirms definitive intrauterine pregnancy</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Yolk sac absence</strong></td>
+                                <td>Empty gestational sac</td>
+                                <td>May need follow-up scan or serial hCG</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Embryo/fetus identification</strong></td>
+                                <td>Echogenic structure attached to yolk sac</td>
+                                <td>Proceed to CRL measurement</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Multiple embryos</strong></td>
+                                <td>More than one embryo visible</td>
+                                <td>Document and refer for detailed evaluation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Definitive Criteria for Intrauterine Pregnancy (IUP)</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Criteria Level</th>
+                                <th>Requirements</th>
+                                <th>Clinical Significance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>DEFINITIVE IUP</strong></td>
+                                <td>Intrauterine gestational sac containing:<br>• Yolk sac OR<br>• Embryo/fetus with cardiac activity</td>
+                                <td>Can confidently rule out ectopic</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Highly Likely IUP</strong></td>
+                                <td>Small intrauterine fluid collection with echogenic rim<br>(in absence of ectopic signs)</td>
+                                <td>>99.5% likelihood of IUP</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pregnancy of Unknown Location</strong></td>
+                                <td>Positive βhCG + no definitive IUP</td>
+                                <td>Requires follow-up/serial monitoring</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="critical-box">
+                        <strong>What Does NOT Constitute Definitive IUP:</strong><br>
+                        • Gestational sac alone (without yolk sac or embryo)<br>
+                        • "Pseudo-gestational sac" (can occur with ectopic pregnancy)<br>
+                        • Decidual reaction only<br>
+                        • Fluid collection without echogenic rim
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-title">Step 3: Crown-Rump Length (CRL) Measurement</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Technique Component</th>
+                                <th>Specific Requirements</th>
+                                <th>Why It Matters</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Image optimization</strong></td>
+                                <td>Embryo/fetus fills most of image space</td>
+                                <td>Maximizes measurement accuracy</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fetal positioning</strong></td>
+                                <td>Neutral midsagittal position (later first trimester)</td>
+                                <td>Prevents measurement distortion</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Beam alignment</strong></td>
+                                <td>Ultrasound beam perpendicular to embryo/fetus</td>
+                                <td>Ensures true length measurement</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caliper placement</strong></td>
+                                <td>Outer border of skin from head to rump</td>
+                                <td>Standardized measurement technique</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Entire length visible</strong></td>
+                                <td>Show complete CRL in image</td>
+                                <td>Partial measurements are inaccurate</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="critical-box">
+                        <strong>CRL-Based Redating Guidelines:</strong><br>
+                        • <8 6/7 weeks: Redate if discrepancy >5 days from LMP<br>
+                        • 9 0/7 - 13 6/7 weeks: Redate if discrepancy >7 days from LMP<br><br>
+                        <strong>Critical Note:</strong> CRL is the MOST accurate method for pregnancy dating in first trimester
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-title">Step 4: Document Cardiac Activity</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Technique</th>
+                                <th>When to Use</th>
+                                <th>Avoid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>M-mode imaging</strong></td>
+                                <td>Place M-mode cursor through fetal heart</td>
+                                <td>Preferred method</td>
+                                <td>Pulsed Doppler in first trimester</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2D video clip</strong></td>
+                                <td>Record real-time cardiac motion</td>
+                                <td>Alternative to M-mode</td>
+                                <td>Using Doppler to "hear" heartbeat</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Timing expectations</strong></td>
+                                <td>Usually visible when embryo ≥2mm (transvaginal)</td>
+                                <td>Guide expectations</td>
+                                <td>Immediate pregnancy termination</td>
+                            </tr>
+                            <tr>
+                                <td><strong>No cardiac activity</strong></td>
+                                <td>If embryo <7mm without activity</td>
+                                <td>Follow-up scan in 1 week</td>
+                                <td>Immediate pregnancy termination</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="safety-box">
+                        SAFETY PRIORITY: NEVER use pulsed Doppler in first trimester to hear heartbeat - violates ALARA principle
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-title">Step 5: Examine Adnexa and Cul-de-sac with Free Fluid Assessment</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Anatomical Area</th>
+                                <th>What to Assess</th>
+                                <th>Document</th>
+                                <th>Red Flags</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Right adnexa</strong></td>
+                                <td>Ovaries, fallopian tubes</td>
+                                <td>Presence, location, appearance, size</td>
+                                <td>Masses, complex cysts</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Left adnexa</strong></td>
+                                <td>Ovaries, fallopian tubes</td>
+                                <td>Any abnormal findings</td>
+                                <td>Ectopic pregnancy signs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cul-de-sac (Pouch of Douglas)</strong></td>
+                                <td>Free fluid presence/absence</td>
+                                <td>Amount and characteristics</td>
+                                <td>Large amount of free fluid</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Paracolic gutters</strong></td>
+                                <td>Extend assessment if fluid seen</td>
+                                <td>Document extent</td>
+                                <td>Significant hemoperitoneum</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ovarian findings</strong></td>
+                                <td>Corpus luteum, cysts</td>
+                                <td>Size and characteristics</td>
+                                <td>Suspicious solid components</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Free Fluid Assessment Protocol</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Amount of Fluid</th>
+                                <th>Clinical Significance</th>
+                                <th>Action Required</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>No fluid</strong></td>
+                                <td>Normal finding</td>
+                                <td>Document absence</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Trace/small amount</strong></td>
+                                <td>May be physiologic</td>
+                                <td>Document, monitor symptoms</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Moderate amount</strong></td>
+                                <td>Concerning, especially with pain</td>
+                                <td>Urgent evaluation needed</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Large amount</strong></td>
+                                <td>High suspicion for rupture/bleeding</td>
+                                <td>Emergency consultation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Echogenic fluid</strong></td>
+                                <td>Suggests blood/debris</td>
+                                <td>Immediate physician involvement</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="warning-box">
+                        <strong>Critical Clinical Correlations:</strong><br>
+                        • Free fluid + no IUP + positive pregnancy test = HIGH suspicion for ectopic pregnancy<br>
+                        • Free fluid + adnexal mass + pelvic pain = Possible ovarian torsion or rupture<br>
+                        • Large volume free fluid = Potential hemoperitoneum requiring emergency care
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-title">Step 6: Apply ALARA Principle (Safety Requirements)</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Safety Parameter</th>
+                                <th>First Trimester Requirement</th>
+                                <th>Monitoring</th>
+                                <th>Rationale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Thermal Index</strong></td>
+                                <td>TIS (soft tissue) at <10 weeks</td>
+                                <td>Ratio must be <0.7</td>
+                                <td>Bone not yet ossified</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Thermal Index</strong></td>
+                                <td>TIB (bone) at ≥10 weeks</td>
+                                <td>Ratio must be <0.7</td>
+                                <td>Bone ossification begins</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scan time</strong></td>
+                                <td>Minimize dwell time</td>
+                                <td>Keep as short as possible</td>
+                                <td>Reduce total exposure</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Power settings</strong></td>
+                                <td>Use lowest settings for diagnostic quality</td>
+                                <td>Adjust as needed</td>
+                                <td>ALARA compliance</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-title">When Transabdominal Approach is Not Definitive</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Next Step</th>
+                                <th>Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Poor visualization</strong></td>
+                                <td>Switch to transvaginal</td>
+                                <td>Better resolution in early pregnancy</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Uncertain findings</strong></td>
+                                <td>Transvaginal confirmation</td>
+                                <td>Higher frequency = better detail</td>
+                            </tr>
+                            <tr>
+                                <td><strong>No intrauterine pregnancy seen</strong></td>
+                                <td>Transvaginal scan</td>
+                                <td>Rule out very early pregnancy</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Adnexal mass question</strong></td>
+                                <td>Transvaginal evaluation</td>
+                                <td>Better characterization</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </body>
+        </html>
+    `;
+    
+    const newWindow = window.open('', '_blank');
+    newWindow.document.write(tableHTML);
+    newWindow.document.close();
+}
+
+        
         // 5 E's table function - opens in new tab
         function show5EsTable(e) {
             e.preventDefault();
