@@ -288,6 +288,304 @@
                 font-size: 1.2rem;
             }
         }
+
+         /* Widget Container */
+        .zine-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            z-index: 9999;
+            font-family: 'Courier New', monospace;
+            transition: none !important;
+            animation: none !important;
+        }
+
+        /* Toggle Button */
+        .zine-toggle {
+            width: 60px;
+            height: 60px;
+            background: #39BFC9;
+            border: 4px solid #000000;
+            border-style: outset;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 4px 4px 0px #4B4B4B;
+            user-select: none;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .zine-toggle:hover {
+            border-style: inset;
+            box-shadow: 2px 2px 0px #4B4B4B;
+        }
+
+        .zine-toggle:active {
+            border-style: inset;
+            box-shadow: 1px 1px 0px #4B4B4B;
+        }
+
+        /* Expanded Panel */
+        .zine-panel {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background: #BEBEBE;
+            border: 4px solid #000000;
+            border-style: outset;
+            box-shadow: 4px 4px 0px #4B4B4B;
+            display: none;
+            overflow: hidden;
+        }
+
+        .zine-panel.expanded {
+            display: block;
+        }
+
+        /* Header */
+        .zine-header {
+            background: #39BFC9;
+            padding: 10px;
+            border-bottom: 2px solid #000000;
+            text-align: center;
+        }
+
+        .zine-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #990000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .zine-subtitle {
+            font-size: 10px;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        /* Content Area */
+        .zine-content {
+            height: calc(100% - 80px);
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        /* Module Selection */
+        .module-category {
+            background: #828282;
+            border: 2px solid #000000;
+            border-style: inset;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        .category-title {
+            font-size: 11px;
+            font-weight: bold;
+            color: #990000;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #4B4B4B;
+            padding-bottom: 3px;
+        }
+
+        .module-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 9px;
+        }
+
+        .module-name {
+            flex: 1;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .module-pages {
+            background: #990000;
+            color: #BEBEBE;
+            padding: 1px 4px;
+            border: 1px solid #000000;
+            margin: 0 5px;
+            font-size: 8px;
+        }
+
+        .module-btn {
+            width: 20px;
+            height: 20px;
+            background: #39BFC9;
+            border: 2px solid #000000;
+            border-style: outset;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .module-btn:hover {
+            border-style: inset;
+        }
+
+        .module-btn.added {
+            background: #990000;
+            color: #BEBEBE;
+        }
+
+        /* Selected Modules */
+        .selected-section {
+            background: #828282;
+            border: 2px solid #000000;
+            border-style: inset;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        .selected-title {
+            font-size: 11px;
+            font-weight: bold;
+            color: #990000;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .selected-item {
+            display: flex;
+            align-items: center;
+            justify-content: between;
+            margin-bottom: 3px;
+            font-size: 9px;
+            background: #BEBEBE;
+            padding: 3px 5px;
+            border: 1px solid #000000;
+        }
+
+        .selected-name {
+            flex: 1;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .remove-btn {
+            width: 15px;
+            height: 15px;
+            background: #990000;
+            color: #BEBEBE;
+            border: 1px solid #000000;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            font-weight: bold;
+        }
+
+        /* Export Buttons */
+        .export-section {
+            background: #828282;
+            border: 2px solid #000000;
+            border-style: inset;
+            padding: 8px;
+        }
+
+        .export-btn {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 5px;
+            background: #39BFC9;
+            border: 2px solid #000000;
+            border-style: outset;
+            cursor: pointer;
+            font-size: 9px;
+            font-weight: bold;
+            color: #000000;
+            text-transform: uppercase;
+        }
+
+        .export-btn:hover {
+            border-style: inset;
+        }
+
+        .export-btn.disabled {
+            background: #4B4B4B;
+            color: #828282;
+            cursor: not-allowed;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .zine-widget {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .zine-panel {
+                width: calc(100vw - 30px);
+                height: calc(100vh - 100px);
+                right: -15px;
+                bottom: -15px;
+            }
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            background: #990000;
+            color: #BEBEBE;
+            border: 2px solid #000000;
+            border-style: outset;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover {
+            border-style: inset;
+        }
+
+        /* Scrollbar styling */
+        .zine-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .zine-content::-webkit-scrollbar-track {
+            background: #4B4B4B;
+            border: 1px solid #000000;
+        }
+
+        .zine-content::-webkit-scrollbar-thumb {
+            background: #39BFC9;
+            border: 1px solid #000000;
+        }
+
+        .zine-content::-webkit-scrollbar-thumb:hover {
+            background: #990000;
+        }
+        
     </style>
 </head>
 <body>
@@ -429,6 +727,83 @@
             <div class="category-card" data-category="vte">
                 <h2 class="category-title">Venous Thromboembolism <span class="video-count">1</span></h2>
                 <a href="https://coreultrasound.com/dvt/" class="video-link" target="_blank">Deep Venous Thrombosis</a>
+            </div>
+        </div>
+    </div>
+
+     <!-- Zine Builder Widget -->
+    <div class="zine-widget" id="zineWidget">
+        <!-- Toggle Button -->
+        <div class="zine-toggle" id="zineToggle">
+            Zine<br>Builder
+        </div>
+
+        <!-- Expanded Panel -->
+        <div class="zine-panel" id="zinePanel">
+            <div class="close-btn" id="closeBtn">×</div>
+            
+            <div class="zine-header">
+                <div class="zine-title">Medical Zine Builder</div>
+                <div class="zine-subtitle">Create Pocket Reference</div>
+            </div>
+
+            <div class="zine-content">
+                <!-- Selected Modules Section -->
+                <div class="selected-section">
+                    <div class="selected-title">Your Zine (<span id="moduleCount">0</span> modules, <span id="pageCount">0</span> pages)</div>
+                    <div id="selectedModules">
+                        <div style="text-align: center; color: #4B4B4B; font-size: 9px; padding: 10px;">
+                            No modules selected
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Modules -->
+                
+                <!-- Cardiology Modules -->
+                <div class="module-category">
+                    <div class="category-title">Cardiology</div>
+                    <div class="module-item">
+                        <span class="module-name">Echo Measurements</span>
+                        <span class="module-pages">1p</span>
+                        <div class="module-btn" data-module="echo">+</div>
+                    </div>
+                    <div class="module-item">
+                        <span class="module-name">EKG Interpretation</span>
+                        <span class="module-pages">2p</span>
+                        <div class="module-btn" data-module="ekg">+</div>
+                    </div>
+                </div>
+
+                <!-- Ultrasound Modules -->
+                <div class="module-category">
+                    <div class="category-title">Ultrasound</div>
+                    <div class="module-item">
+                        <span class="module-name">RUSH Protocol</span>
+                        <span class="module-pages">1p</span>
+                        <div class="module-btn" data-module="rush">+</div>
+                    </div>
+                    <div class="module-item">
+                        <span class="module-name">Cardiac Views</span>
+                        <span class="module-pages">2p</span>
+                        <div class="module-btn" data-module="cardiac-views">+</div>
+                    </div>
+                    <div class="module-item">
+                        <span class="module-name">BLUE Protocol</span>
+                        <span class="module-pages">1p</span>
+                        <div class="module-btn" data-module="blue">+</div>
+                    </div>
+                </div>
+
+                <!-- Export Section -->
+                <div class="export-section">
+                    <div class="selected-title">Export Options</div>
+                    <button class="export-btn" id="exportLetter">Export US Letter PDF</button>
+                    <button class="export-btn" id="exportA4">Export A4 PDF</button>
+                    <div style="font-size: 8px; color: #4B4B4B; margin-top: 5px; text-align: center;">
+                        Print double-sided, fold in half
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1599,6 +1974,214 @@ function showGetTwoViewsCase(e) {
         document.addEventListener('DOMContentLoaded', function() {
             searchBox.addEventListener('input', performSearch);
         });
+    <!-- Load jsPDF from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script>
+        // Medical module data
+        const modules = {
+            acls: { title: 'ACLS Protocol', pages: 2, content: 'VF/VT Algorithm: Shock 120-200J, CPR 2min, Epinephrine 1mg q3-5min, Amiodarone 300mg then 150mg. Asystole/PEA: CPR 2min, Epinephrine 1mg q3-5min, consider H\'s & T\'s.' },
+            stroke: { title: 'Stroke Assessment', pages: 1, content: 'NIHSS: 0-4 minor, 5-15 moderate, 16-20 mod-severe, 21-42 severe. tPA criteria: 18-80y, <4.5hrs, no hemorrhage, NIHSS 4-25.' },
+            sepsis: { title: 'Sepsis Protocol', pages: 1, content: 'qSOFA (≥2): RR≥22, altered mental status, SBP≤100. 3hr bundle: lactate, cultures, antibiotics, 30mL/kg fluids if hypotensive.' },
+            echo: { title: 'Echo Measurements', pages: 1, content: 'Normal values: LVEF >55%, LVEDD 3.9-5.3cm, LVESD 2.2-3.6cm(M)/2.2-3.1cm(F). Aortic valve: peak velocity <2.0m/s, area >3.0cm².' },
+            ekg: { title: 'EKG Interpretation', pages: 2, content: 'Systematic approach: Rate (300/RR), rhythm, intervals (PR 120-200ms, QRS <120ms, QT <440ms(M)/<460ms(F)). STEMI: ≥1mm ST elevation in 2+ contiguous leads.' },
+            rush: { title: 'RUSH Protocol', pages: 1, content: 'Pump: pericardial effusion, LV function, RV strain. Tank: IVC size, free fluid, pneumothorax. Pipes: AAA, aortic dissection, DVT.' },
+            'cardiac-views': { title: 'Cardiac Views', pages: 2, content: 'Standard views: Parasternal long/short, apical 4/5 chamber, subxiphoid, IVC. Assess wall motion using SALPI mnemonic (septal, anterior, lateral, posterior, inferior).' },
+            blue: { title: 'BLUE Protocol', pages: 1, content: 'Lung ultrasound: Normal A-lines, B-lines (pulmonary edema), consolidation (pneumonia), absent sliding (pneumothorax). BLUE points for systematic scanning.' },
+            dosing: { title: 'Emergency Dosing', pages: 2, content: 'CV: Metoprolol 25-100mg BID PO/2.5-5mg IV, Lisinopril 2.5-40mg daily, Furosemide 20-80mg daily PO/20-40mg IV. Pain: Morphine 2-10mg IV q2-4h.' }
+        };
+
+        let selectedModules = [];
+
+        // DOM elements
+        const zineToggle = document.getElementById('zineToggle');
+        const zinePanel = document.getElementById('zinePanel');
+        const closeBtn = document.getElementById('closeBtn');
+        const moduleCount = document.getElementById('moduleCount');
+        const pageCount = document.getElementById('pageCount');
+        const selectedModulesDiv = document.getElementById('selectedModules');
+        const exportLetterBtn = document.getElementById('exportLetter');
+        const exportA4Btn = document.getElementById('exportA4');
+
+        // Toggle panel
+        zineToggle.addEventListener('click', () => {
+            zinePanel.classList.toggle('expanded');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            zinePanel.classList.remove('expanded');
+        });
+
+        // Module selection
+        document.querySelectorAll('.module-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const moduleId = btn.getAttribute('data-module');
+                const module = modules[moduleId];
+                
+                if (btn.classList.contains('added')) {
+                    // Remove module
+                    selectedModules = selectedModules.filter(m => m.id !== moduleId);
+                    btn.textContent = '+';
+                    btn.classList.remove('added');
+                } else {
+                    // Add module
+                    selectedModules.push({ id: moduleId, ...module });
+                    btn.textContent = '−';
+                    btn.classList.add('added');
+                }
+                
+                updateSelectedDisplay();
+            });
+        });
+
+        // Update selected modules display
+        function updateSelectedDisplay() {
+            const totalPages = selectedModules.reduce((sum, m) => sum + m.pages, 0);
+            
+            moduleCount.textContent = selectedModules.length;
+            pageCount.textContent = totalPages;
+            
+            if (selectedModules.length === 0) {
+                selectedModulesDiv.innerHTML = '<div style="text-align: center; color: #4B4B4B; font-size: 9px; padding: 10px;">No modules selected</div>';
+                exportLetterBtn.classList.add('disabled');
+                exportA4Btn.classList.add('disabled');
+            } else {
+                selectedModulesDiv.innerHTML = selectedModules.map(module => `
+                    <div class="selected-item">
+                        <span class="selected-name">${module.title}</span>
+                        <div class="remove-btn" data-remove="${module.id}">×</div>
+                    </div>
+                `).join('');
+                
+                exportLetterBtn.classList.remove('disabled');
+                exportA4Btn.classList.remove('disabled');
+                
+                // Add remove functionality
+                document.querySelectorAll('[data-remove]').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const moduleId = btn.getAttribute('data-remove');
+                        selectedModules = selectedModules.filter(m => m.id !== moduleId);
+                        
+                        // Update main button
+                        const mainBtn = document.querySelector(`[data-module="${moduleId}"]`);
+                        if (mainBtn) {
+                            mainBtn.textContent = '+';
+                            mainBtn.classList.remove('added');
+                        }
+                        
+                        updateSelectedDisplay();
+                    });
+                });
+            }
+        }
+
+        // PDF Generation
+        function generatePDF(paperSize) {
+            if (selectedModules.length === 0) return;
+            
+            try {
+                const { jsPDF } = window.jspdf;
+                
+                // Paper dimensions
+                const dimensions = {
+                    letter: { width: 215.9, height: 279.4 },
+                    a4: { width: 210, height: 297 }
+                };
+                
+                const { width, height } = dimensions[paperSize];
+                const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [width, height] });
+                
+                // Layout settings
+                const margin = 10;
+                const zineWidth = (width - (margin * 2)) / 2 - 5;
+                const lineHeight = 4;
+                let currentY = margin + 10;
+                let currentColumn = 0;
+                
+                // Helper function
+                const addText = (text, fontSize = 10, isBold = false) => {
+                    pdf.setFontSize(fontSize);
+                    pdf.setFont('helvetica', isBold ? 'bold' : 'normal');
+                    
+                    const lines = pdf.splitTextToSize(text, zineWidth);
+                    
+                    for (let line of lines) {
+                        if (currentY + lineHeight > margin + height - 20) {
+                            if (currentColumn === 0) {
+                                currentColumn = 1;
+                                currentY = margin + 10;
+                            } else {
+                                pdf.addPage();
+                                currentColumn = 0;
+                                currentY = margin + 10;
+                            }
+                        }
+                        
+                        const xPosition = currentColumn === 0 ? margin : margin + zineWidth + 10;
+                        pdf.text(line, xPosition, currentY);
+                        currentY += lineHeight;
+                    }
+                };
+                
+                // Title
+                addText('MEDICAL REFERENCE ZINE', 14, true);
+                currentY += 6;
+                addText(`Generated: ${new Date().toLocaleDateString()}`, 8);
+                currentY += 8;
+                
+                // Add modules
+                selectedModules.forEach((module, index) => {
+                    currentY += 4;
+                    addText(module.title.toUpperCase(), 11, true);
+                    currentY += 2;
+                    addText(module.content, 9);
+                    
+                    if (index < selectedModules.length - 1) {
+                        currentY += 4;
+                        const xPosition = currentColumn === 0 ? margin : margin + zineWidth + 10;
+                        pdf.setDrawColor(200, 200, 200);
+                        pdf.line(xPosition, currentY, xPosition + zineWidth, currentY);
+                        currentY += 3;
+                    }
+                });
+                
+                // Add fold guide
+                pdf.setDrawColor(150, 150, 150);
+                pdf.setLineDashPattern([2, 2], 0);
+                pdf.line(width/2, 0, width/2, height);
+                
+                // Save
+                const filename = `medical-zine-${paperSize}-${new Date().toISOString().split('T')[0]}.pdf`;
+                pdf.save(filename);
+                
+            } catch (error) {
+                alert('PDF generation failed. Please try again or check your internet connection.');
+                console.error('PDF error:', error);
+            }
+        }
+
+        // Export button events
+        exportLetterBtn.addEventListener('click', () => {
+            if (!exportLetterBtn.classList.contains('disabled')) {
+                generatePDF('letter');
+            }
+        });
+
+        exportA4Btn.addEventListener('click', () => {
+            if (!exportA4Btn.classList.contains('disabled')) {
+                generatePDF('a4');
+            }
+        });
+
+        // Close panel when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('zineWidget').contains(e.target)) {
+                zinePanel.classList.remove('expanded');
+            }
+        });
+
+        // Initial display update
+        updateSelectedDisplay();    
     </script>
 <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fchristiantreat.github.io%2Fsonowolf%2F&label=visits+%2F+total&icon=share&color=%23ffffff&message=&style=flat-square&tz=UTC">
 </body>    
