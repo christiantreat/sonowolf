@@ -2486,89 +2486,88 @@ function showGetTwoViewsCase(e) {
         }
 
         // PDF Generation
-        function generatePDF(paperSize) {
-            if (selectedModules.length === 0) return;
+        // Simple 4-page zine (easier to fold and understand)
+function generatePDF(paperSize) {
+    if (selectedModules.length === 0) return;
+    
+    try {
+        const { jsPDF } = window.jspdf;
+        
+        const dimensions = {
+            letter: { width: 215.9, height: 279.4 },
+            a4: { width: 210, height: 297 }
+        };
+        
+        const { width, height } = dimensions[paperSize];
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [width, height] });
+        
+        // Simple 4-panel layout (2x2)
+        const panelWidth = width / 2;
+        const panelHeight = height / 2;
+        const margin = 8;
+        
+        // Page order for folded booklet: [4][1] [2][3] when folded
+        const panels = [
+            { page: 4, x: 0, y: 0 },                    // Back cover
+            { page: 1, x: panelWidth, y: 0 },           // Front cover  
+            { page: 2, x: 0, y: panelHeight },          // Page 2
+            { page: 3, x: panelWidth, y: panelHeight }   // Page 3
+        ];
+        
+        const addContent = (text, panel, fontSize = 10, isBold = false) => {
+            pdf.setFontSize(fontSize);
+            pdf.setFont('helvetica', isBold ? 'bold' : 'normal');
             
-            try {
-                const { jsPDF } = window.jspdf;
-                
-                // Paper dimensions
-                const dimensions = {
-                    letter: { width: 215.9, height: 279.4 },
-                    a4: { width: 210, height: 297 }
-                };
-                
-                const { width, height } = dimensions[paperSize];
-                const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [width, height] });
-                
-                // Layout settings
-                const margin = 10;
-                const zineWidth = (width - (margin * 2)) / 2 - 5;
-                const lineHeight = 4;
-                let currentY = margin + 10;
-                let currentColumn = 0;
-                
-                // Helper function
-                const addText = (text, fontSize = 10, isBold = false) => {
-                    pdf.setFontSize(fontSize);
-                    pdf.setFont('helvetica', isBold ? 'bold' : 'normal');
-                    
-                    const lines = pdf.splitTextToSize(text, zineWidth);
-                    
-                    for (let line of lines) {
-                        if (currentY + lineHeight > margin + height - 20) {
-                            if (currentColumn === 0) {
-                                currentColumn = 1;
-                                currentY = margin + 10;
-                            } else {
-                                pdf.addPage();
-                                currentColumn = 0;
-                                currentY = margin + 10;
-                            }
-                        }
-                        
-                        const xPosition = currentColumn === 0 ? margin : margin + zineWidth + 10;
-                        pdf.text(line, xPosition, currentY);
-                        currentY += lineHeight;
-                    }
-                };
-                
-                // Title
-                addText('MEDICAL REFERENCE ZINE', 14, true);
-                currentY += 6;
-                addText(`Generated: ${new Date().toLocaleDateString()}`, 8);
-                currentY += 8;
-                
-                // Add modules
-                selectedModules.forEach((module, index) => {
-                    currentY += 4;
-                    addText(module.title.toUpperCase(), 11, true);
-                    currentY += 2;
-                    addText(module.content, 9);
-                    
-                    if (index < selectedModules.length - 1) {
-                        currentY += 4;
-                        const xPosition = currentColumn === 0 ? margin : margin + zineWidth + 10;
-                        pdf.setDrawColor(200, 200, 200);
-                        pdf.line(xPosition, currentY, xPosition + zineWidth, currentY);
-                        currentY += 3;
-                    }
-                });
-                
-                // Add fold guide
-                pdf.setDrawColor(150, 150, 150);
-                pdf.setLineDashPattern([2, 2], 0);
-                pdf.line(width/2, 0, width/2, height);
-                
-                // Save
-                const filename = `medical-zine-${paperSize}-${new Date().toISOString().split('T')[0]}.pdf`;
-                pdf.save(filename);
-                
-            } catch (error) {
-                alert('PDF generation failed. Please try again or check your internet connection.');
-                console.error('PDF error:', error);
+            const lines = pdf.splitTextToSize(text, panelWidth - (margin * 2));
+            let y = panel.y + margin + fontSize;
+            
+            lines.forEach(line => {
+                if (y < panel.y + panelHeight - margin) {
+                    pdf.text(line, panel.x + margin, y);
+                    y += fontSize * 0.4;
+                }
+            });
+        };
+        
+        // Add content to panels
+        addContent('MEDICAL\nREFERENCE\nZINE', panels.find(p => p.page === 1), 16, true);
+        addContent('The Sono Wolf\nUltrasound Portal', panels.find(p => p.page === 4), 10, false);
+        
+        // Add modules to internal pages
+        selectedModules.forEach((module, index) => {
+            const pageNum = 2 + (index % 2); // Use pages 2 and 3
+            const panel = panels.find(p => p.page === pageNum);
+            
+            if (index < 2) {
+                // First module on each page gets title treatment
+                addContent(module.title.toUpperCase(), panel, 12, true);
+                addContent(module.content, { ...panel, y: panel.y + 20 }, 9, false);
+            } else {
+                // Additional modules get appended
+                addContent('\n\n' + module.title.toUpperCase() + '\n' + module.content, 
+                          { ...panel, y: panel.y + 80 }, 8, false);
             }
-        }
+        });
+        
+        // Draw fold guides
+        pdf.setDrawColor(180, 180, 180);
+        pdf.setLineDashPattern([2, 2], 0);
+        pdf.line(width/2, 0, width/2, height); // Vertical fold
+        pdf.line(0, height/2, width, height/2); // Horizontal fold
+        
+        // Add folding instructions
+        pdf.setFontSize(6);
+        pdf.setFont('helvetica', 'normal');
+        pdf.text('FOLD: 1) Cut along center lines 2) Fold in half 3) Fold in half again', 5, height - 3);
+        
+        const filename = `medical-zine-${paperSize}-${new Date().toISOString().split('T')[0]}.pdf`;
+        pdf.save(filename);
+        
+    } catch (error) {
+        alert('Zine PDF generation failed. Please try again.');
+        console.error('Zine PDF error:', error);
+    }
+}
 
         // Export button events
         exportLetterBtn.addEventListener('click', () => {
