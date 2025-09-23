@@ -699,7 +699,11 @@
                 <h2 class="category-title">Gastrointestinal <span class="video-count">2</span></h2>
                 
                 <h3 class="category-subheader">Normal Anatomy</h3>
+                <a href="#" class="video-link" onclick="showHepatobiliaryAnatomy(event)">Colorized Anatomy</a>
                 <a href="https://pocus101.b-cdn.net/wp-content/uploads/2020/10/Portal-Triad-Mickey-Mouse-Sign-Portal-Vein-CBD-Right-Hepatic-Artery-Hepatobiliary-Ultrasound-2-1024x715.png" class="video-link" target="_blank">Portal Triad Mickey Mouse View</a>
+
+                <h3 class="category-subheader">Pathology</h3>
+                <a href="#" class="video-link" onclick="showCholecystitisMeasurements(event)">Measurements in Cholecystitis</a>
                 
                 <h3 class="category-subheader">Videos</h3>
                 <a href="https://coreultrasound.com/gallbladder/" class="video-link" target="_blank">Gallbladder</a>
@@ -997,6 +1001,410 @@
             newWindow.document.close();
         }
 
+// Hepatobiliary anatomy function - opens in new tab
+function showHepatobiliaryAnatomy(e) {
+    e.preventDefault();
+    const anatomyHTML = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Hepatobiliary Anatomy - Colorized Ultrasound</title>
+            <style>
+                body { 
+                    font-family: 'Courier New', monospace; 
+                    background: #BEBEBE; 
+                    margin: 20px; 
+                    color: #000000;
+                }
+                .container {
+                    background: #BEBEBE; 
+                    border: 4px solid #000000; 
+                    border-style: outset; 
+                    padding: 20px; 
+                    max-width: 1000px; 
+                    margin: 0 auto;
+                }
+                h2 { 
+                    color: #990000; 
+                    text-align: center; 
+                    margin-bottom: 20px; 
+                    text-transform: uppercase; 
+                }
+                .image-container { 
+                    background: #828282; 
+                    border: 2px solid #000000; 
+                    border-style: inset; 
+                    padding: 20px; 
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                .image-container img {
+                    max-width: 100%;
+                    height: auto;
+                    border: 2px solid #000000;
+                    margin-bottom: 15px;
+                }
+                .legend {
+                    background: #828282; 
+                    border: 2px solid #000000; 
+                    border-style: inset; 
+                    padding: 20px; 
+                }
+                .legend-title {
+                    color: #990000;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    margin-bottom: 15px;
+                    text-align: center;
+                    border-bottom: 2px solid #000000;
+                    padding-bottom: 5px;
+                }
+                .legend-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 10px;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+                .legend-item {
+                    display: flex;
+                    align-items: center;
+                    padding: 8px;
+                    background: #BEBEBE;
+                    border: 1px solid #000000;
+                }
+                .color-box {
+                    width: 20px;
+                    height: 20px;
+                    border: 2px solid #000000;
+                    margin-right: 10px;
+                    flex-shrink: 0;
+                }
+                .green { background: #00FF00; }
+                .blue { background: #0066FF; }
+                .orange { background: #FF6600; }
+                .pink { background: #FF69B4; }
+                .yellow { background: #FFFF00; }
+                @media (max-width: 768px) {
+                    .legend-grid { grid-template-columns: 1fr; }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h2>Hepatobiliary Anatomy - Colorized Ultrasound</h2>
+                
+                <div class="image-container">
+                    <img src="https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1567929662896-OVT3GRVKEE6G5FYO7RDA/gallbladder-and-cbd.gif?format=750w" alt="Colorized hepatobiliary anatomy ultrasound">
+                </div>
+                
+                <div class="legend">
+                    <div class="legend-title">Color-Coded Anatomical Structures</div>
+                    <div class="legend-grid">
+                        <div class="legend-item">
+                            <div class="color-box green"></div>
+                            <span>Gallbladder</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="color-box blue"></div>
+                            <span>IVC (Inferior Vena Cava)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="color-box orange"></div>
+                            <span>Portal Vein</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="color-box pink"></div>
+                            <span>Common Bile Duct</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="color-box yellow"></div>
+                            <span>Lumen of Hepatic Vein</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+        </html>
+    `;
+    
+    const newWindow = window.open('', '_blank');
+    newWindow.document.write(anatomyHTML);
+    newWindow.document.close();
+}
+
+// Cholecystitis measurements function - opens in new tab
+function showCholecystitisMeasurements(e) {
+    e.preventDefault();
+    const tableHTML = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Cholecystitis - Ultrasound Measurements and Findings</title>
+            <style>
+                body { 
+                    font-family: 'Courier New', monospace; 
+                    background: #BEBEBE; 
+                    margin: 20px; 
+                    color: #000000;
+                }
+                .container {
+                    background: #BEBEBE; 
+                    border: 4px solid #000000; 
+                    border-style: outset; 
+                    padding: 20px; 
+                    max-width: 1200px; 
+                    margin: 0 auto;
+                }
+                h2 { 
+                    color: #990000; 
+                    text-align: center; 
+                    margin-bottom: 20px; 
+                    text-transform: uppercase; 
+                    font-family: 'Impact', 'Arial Black', sans-serif;
+                    text-shadow: 2px 2px 0px #000000;
+                }
+                .section { 
+                    background: #828282; 
+                    border: 3px solid #000000; 
+                    border-style: inset; 
+                    padding: 15px; 
+                    margin-bottom: 20px;
+                }
+                .section-title {
+                    color: #990000;
+                    font-weight: bold;
+                    font-size: 1.1rem;
+                    margin-bottom: 15px;
+                    text-transform: uppercase;
+                    border-bottom: 2px solid #000000;
+                    padding-bottom: 5px;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-bottom: 10px;
+                    font-size: 12px;
+                }
+                th {
+                    background: #39BFC9;
+                    color: #000000;
+                    font-weight: bold;
+                    padding: 10px;
+                    border: 2px solid #000000;
+                    text-transform: uppercase;
+                    text-align: left;
+                }
+                td {
+                    background: #BEBEBE;
+                    padding: 10px;
+                    border: 1px solid #000000;
+                    vertical-align: top;
+                }
+                .finding {
+                    font-weight: bold;
+                    color: #000000;
+                }
+                .measurement {
+                    font-family: 'Courier New', monospace;
+                    font-weight: bold;
+                    color: #990000;
+                }
+                .priority-high {
+                    background: #990000;
+                    color: #BEBEBE;
+                    padding: 15px;
+                    border: 2px solid #000000;
+                    margin-bottom: 15px;
+                    font-weight: bold;
+                }
+                .priority-medium {
+                    background: #39BFC9;
+                    color: #000000;
+                    padding: 15px;
+                    border: 2px solid #000000;
+                    margin-bottom: 15px;
+                    font-weight: bold;
+                }
+                .priority-low {
+                    background: #FFD700;
+                    color: #000000;
+                    padding: 15px;
+                    border: 2px solid #000000;
+                    margin-bottom: 15px;
+                    font-weight: bold;
+                }
+                @media (max-width: 768px) {
+                    table, th, td {
+                        font-size: 10px;
+                    }
+                    .container {
+                        padding: 10px;
+                        margin: 10px;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h2>Cholecystitis - Ultrasound Measurements and Findings</h2>
+                
+                <div class="priority-high">
+                    <strong>MOST SENSITIVE COMBINATION (Look for these first):</strong><br>
+                    • Cholelithiasis + obstructing stone in neck/cystic duct<br>
+                    • Positive sonographic Murphy's sign
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Secondary Findings (Strong Supporting Evidence)</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Finding</th>
+                                <th>Measurement/Criteria</th>
+                                <th>Clinical Significance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="finding">Wall Thickening</td>
+                                <td class="measurement">&gt;3mm</td>
+                                <td>Strong indicator of acute cholecystitis when combined with other findings</td>
+                            </tr>
+                            <tr>
+                                <td class="finding">Pericholecystic Fluid</td>
+                                <td class="measurement">Any amount around GB</td>
+                                <td>Suggests inflammatory process; assess for complications</td>
+                            </tr>
+                            <tr>
+                                <td class="finding">Cystic Artery PSV</td>
+                                <td class="measurement">≥30 cm/s</td>
+                                <td><strong>95% PPV, 81% accuracy</strong> - highly specific for acute cholecystitis</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Sonographic Murphy's Sign Technique</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Technique</th>
+                                <th>Positive Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="finding">Probe Pressure</td>
+                                <td>Apply gentle pressure directly over gallbladder fundus</td>
+                                <td>Focal tenderness at GB location</td>
+                            </tr>
+                            <tr>
+                                <td class="finding">Patient Response</td>
+                                <td>Ask patient to take deep breath while maintaining pressure</td>
+                                <td>Sudden inspiratory arrest due to pain</td>
+                            </tr>
+                            <tr>
+                                <td class="finding">Control Test</td>
+                                <td>Move probe to different location and repeat</td>
+                                <td>No similar pain response elsewhere</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="priority-low">
+                    <strong>LESS SPECIFIC FINDINGS (Supportive but not diagnostic alone):</strong><br>
+                    • Gallbladder distension<br>
+                    • Sludge
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Normal vs. Abnormal Measurements</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Normal Range</th>
+                                <th>Abnormal (Concerning)</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="finding">GB Wall Thickness</td>
+                                <td class="measurement">&lt;3mm</td>
+                                <td class="measurement">&gt;3mm</td>
+                                <td>Measure at anterior wall; fasting patient preferred</td>
+                            </tr>
+                            <tr>
+                                <td class="finding">GB Length</td>
+                                <td class="measurement">7-10cm</td>
+                                <td class="measurement">&gt;10cm</td>
+                                <td>Distension may indicate outlet obstruction</td>
+                            </tr>
+                            <tr>
+                                <td class="finding">GB Width</td>
+                                <td class="measurement">3-4cm</td>
+                                <td class="measurement">&gt;4cm</td>
+                                <td>Measure at widest point</td>
+                            </tr>
+                            <tr>
+                                <td class="finding">Cystic Artery PSV</td>
+                                <td class="measurement">&lt;30 cm/s</td>
+                                <td class="measurement">≥30 cm/s</td>
+                                <td>Use color/power Doppler to locate vessel</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Diagnostic Approach Priority</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Step</th>
+                                <th>Assessment</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1</strong></td>
+                                <td>Look for stones + sonographic Murphy's sign</td>
+                                <td>If both present → high suspicion for acute cholecystitis</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2</strong></td>
+                                <td>Measure wall thickness and assess for pericholecystic fluid</td>
+                                <td>Strong supporting evidence if abnormal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3</strong></td>
+                                <td>Perform Doppler assessment of cystic artery</td>
+                                <td>PSV ≥30 cm/s provides high specificity</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4</strong></td>
+                                <td>Document additional findings (distension, sludge)</td>
+                                <td>Supportive but not diagnostic alone</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </body>
+        </html>
+    `;
+    
+    const newWindow = window.open('', '_blank');
+    newWindow.document.write(tableHTML);
+    newWindow.document.close();
+}
+        
 // Reproductive anatomy function - opens in new tab
 function showReproductiveAnatomy(e) {
     e.preventDefault();
